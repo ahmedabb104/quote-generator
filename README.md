@@ -1,4 +1,8 @@
-# Quote Generator
+# Quote Generator  
+Generates a random quote.  
+https://ahmedsquotegenerator.netlify.app/  
 ***
-Created using React, generates a random quote.  
-https://ahmedsquotegenerator.netlify.app/
+### Technologies used:  
+- React
+- CSS
+- HTML
