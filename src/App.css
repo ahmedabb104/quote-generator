@@ -43,20 +43,6 @@ p {
   color: var(--main-colour);
 }
 
-@media only screen and (max-width: 550px){
-  #quote-box {
-    width: 30rem;
-    padding: 1rem;
-  }
-}
-
-@media only screen and (max-width: 330px){
-  #quote-box {
-    width: 20rem;
-    padding: 0.5rem;
-  }
-}
-
 #flex-buttons {
   display: flex;
   flex-direction: row;
@@ -77,11 +63,35 @@ p {
   filter: brightness(120%);
 }
 
-#tweet-quote {
+#tweet-quote, #copy-quote {
   font-size: 20px;
+}
+
+#copy-quote {
+  position: relative;
+  right: 8em;
 }
 
 #flex-footer {
   margin-top: auto;
 }
 
+@media only screen and (max-width: 550px){
+  #quote-box {
+    width: 30rem;
+    padding: 1rem;
+  }
+  #copy-quote {
+    right: 3em;
+  }
+}
+
+@media only screen and (max-width: 330px){
+  #quote-box {
+    width: 20rem;
+    padding: 0.5rem;
+  }
+  #copy-quote {
+    right: 0.5em;
+  }
+}

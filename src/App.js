@@ -18,6 +18,7 @@ class App extends Component {
     }
     this.getRandIndex = this.getRandIndex.bind(this);
     this.getRandColour = this.getRandColour.bind(this);
+    this.handleCopy = this.handleCopy.bind(this);
     this.handleNewQuote = this.handleNewQuote.bind(this);
   }
 
@@ -47,6 +48,11 @@ class App extends Component {
     return colours[Math.floor(Math.random() * colours.length)];
   }
 
+  handleCopy() {
+    const result = '"' + this.state.quote + '" -' + this.state.author;
+    return navigator.clipboard.writeText(result);
+  }
+
   handleNewQuote() {
     this.setState({ randIndex: this.getRandIndex(), colour: this.getRandColour() }, () => {
     this.setState({ quote: this.state.quotes[this.state.randIndex].quoteText }, () => {
@@ -69,6 +75,7 @@ class App extends Component {
           <Quote quote={this.state.quote} author={this.state.author} className="animate__animated animate__zoomIn" />
           <div id="flex-buttons">
             <a class="input-button" id="tweet-quote" title="Tweet" target="_blank" href="https://twitter.com/intent/tweet" rel="noreferrer"><i className="fa fa-twitter"></i></a>
+            <button class="input-button" id="copy-quote" onClick={this.handleCopy}><i className="fa fa-copy"></i></button>
             <button class="input-button" id="new-quote" onClick={this.handleNewQuote}>New quote</button>
           </div>
       </div>
