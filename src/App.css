@@ -10,6 +10,7 @@ html {
 body {
   background: var(--main-colour);
   height: 100%;
+  font-family: 'Raleway', sans-serif;
 }
 
 p {

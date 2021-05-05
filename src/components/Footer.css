@@ -1,5 +1,5 @@
 #footer-container {
-	font-size: 0.6em;
+	font-size: 0.5em;
 	padding: 20px;
 	color: #fffcdb;
 }
@@ -7,5 +7,12 @@
 @media only screen and (max-width: 460px) {
 	#footer-container {
 		font-size: 0.4em;
+	}
+}
+
+@media only screen and (max-width: 330px) {
+	#footer-container {
+		margin-top: 30px;
+		font-size: 0.2em;
 	}
 }

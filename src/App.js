@@ -4,6 +4,8 @@ import Footer from './components/Footer'
 import 'animate.css'
 import './App.css';
 
+const colours = ['teal', '#41b3a3', '#e27d60', '#8d8741', '#5cdb95', '#f64c72', '#501b1d']
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -12,8 +14,10 @@ class App extends Component {
       quotes: [],
       quote: "",
       author: "",
+      colour: "teal"
     }
     this.getRandIndex = this.getRandIndex.bind(this);
+    this.getRandColour = this.getRandColour.bind(this);
     this.handleNewQuote = this.handleNewQuote.bind(this);
   }
 
@@ -39,13 +43,19 @@ class App extends Component {
     }
   }
 
+  getRandColour() {
+    return colours[Math.floor(Math.random() * colours.length)];
+  }
+
   handleNewQuote() {
-    this.setState({ randIndex: this.getRandIndex() }, () => {
+    this.setState({ randIndex: this.getRandIndex(), colour: this.getRandColour() }, () => {
     this.setState({ quote: this.state.quotes[this.state.randIndex].quoteText }, () => {
     if (!this.state.quotes[this.state.randIndex].quoteAuthor){
-      this.setState({ author: "Unknown" })
+      this.setState({ author: "Unknown" });
+      document.documentElement.style.setProperty('--main-colour', this.state.colour);
     } else {
-      this.setState({ author: this.state.quotes[this.state.randIndex].quoteAuthor })
+      this.setState({ author: this.state.quotes[this.state.randIndex].quoteAuthor });
+      document.documentElement.style.setProperty('--main-colour', this.state.colour);
     }
     })
     })
