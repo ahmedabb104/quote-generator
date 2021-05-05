@@ -2,9 +2,10 @@ import './Quote.css';
 
 const Quote = (props) => {
 	return (
-		<div>
-			<p id="text">{props.quote}</p>
-       		<p id="author">- {props.author}</p>
+		<div id="flex-quote">
+			<i className="fa fa-quote-left"></i>
+			<p id="text" key={ props.quote } className={props.className}> {props.quote}</p>
+       		<p id="author" key={ props.author } className={props.className}>- {props.author}</p>
 		</div>
 	);
 }

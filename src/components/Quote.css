@@ -1,0 +1,13 @@
+#flex-quote {
+	display: flex;
+	flex-direction: column;
+}
+
+#text {
+	margin-top: 5px;
+}
+
+#author {
+	align-self: flex-end;
+	margin-top: 10px;
+}

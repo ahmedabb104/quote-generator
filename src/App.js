@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Quote from './components/Quote';
+import Footer from './components/Footer'
+import 'animate.css'
 import './App.css';
 
 class App extends Component {
@@ -53,10 +55,15 @@ class App extends Component {
     console.log(this.state.randIndex)
     return (
     <div className="App">
-      <div id="quote-box">
-        <Quote quote={this.state.quote} author={this.state.author}/>
-        <button id="new-quote" onClick={this.handleNewQuote}>New quote</button>
-        <a id="tweet-quote" title="Tweet" target="_blank" href="https://twitter.com/intent/tweet" rel="noreferrer"><i className="fa fa-twitter"></i></a>
+      <div className="flex-component" id="quote-box">
+          <Quote quote={this.state.quote} author={this.state.author} className="animate__animated animate__zoomIn" />
+          <div id="flex-buttons">
+            <a class="input-button" id="tweet-quote" title="Tweet" target="_blank" href="https://twitter.com/intent/tweet" rel="noreferrer"><i className="fa fa-twitter"></i></a>
+            <button class="input-button" id="new-quote" onClick={this.handleNewQuote}>New quote</button>
+          </div>
+      </div>
+      <div className="flex-component" id="flex-footer">
+        <Footer />
       </div>
     </div>
     )
