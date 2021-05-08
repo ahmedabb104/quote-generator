@@ -7,6 +7,10 @@ html {
   height: 100%;
 }
 
+html *{
+  transition: 0.25s;
+}
+
 body {
   background: var(--main-colour);
   height: 100%;
